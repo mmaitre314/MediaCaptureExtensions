@@ -12,6 +12,7 @@ using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
 using Windows.Media;
 using Windows.Media.Capture;
+using Windows.Media.Devices;
 using Windows.Media.MediaProperties;
 using Windows.System.Display;
 using Windows.UI.Core;
@@ -135,6 +136,26 @@ namespace CaptureTestApp
             await capture.VideoDeviceController.SelectNearestPreviewResolutionAsync(this.ActualWidth, this.ActualHeight);
             Preview.Source = capture;
             await capture.StartPreviewAsync();
+
+            // Enable continuous auto-focus (when supported)
+            var control = capture.VideoDeviceController.FocusControl;
+#if WINDOWS_PHONE_APP
+            if (control.SupportedFocusModes.Contains(FocusMode.Continuous) &&
+                control.SupportedFocusRanges.Contains(AutoFocusRange.FullRange))
+            {
+                control.Configure(new FocusSettings 
+                { 
+                    Mode = FocusMode.Continuous, 
+                    AutoFocusRange = AutoFocusRange.FullRange 
+                });
+                await control.FocusAsync();
+            }
+#else
+            if (control.SupportedPresets.Contains(FocusPreset.Auto))
+            {
+                await control.SetPresetAsync(FocusPreset.Auto);
+            }
+#endif
 
             m_capture = capture;
         }
