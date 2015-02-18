@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MMaitre.MediaCaptureExtensions</id>
+    <title>MediaCapture extensions</title>
+    <version>$NuGetVersion$</version>
+    <authors>Matthieu Maitre</authors>
+    <owners>Matthieu Maitre</owners>
+    <licenseUrl>https://raw.githubusercontent.com/mmaitre314/MediaCaptureExtensions/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mmaitre314/MediaCaptureExtensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Extension methods on MediaCapture and related classes.</summary>
+    <description>Extension methods on MediaCapture and related classes. Supports Universal Store Apps for Windows Phone 8.1 and Windows 8.1. For documentation see https://github.com/mmaitre314/MediaCaptureExtensions .</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright © 2015, Matthieu Maitre. All rights reserved.</copyright>
+    <tags>WinRT MediaCapture Camera Microphone IBuffer</tags>
+  </metadata>
+  <files>
+    <!-- implementation -->
+    <file src="AnyCPU\Release\MediaCaptureExtensions.dll" target="lib\portable-win81+wpa81\" />
+
+    <!-- Intellisense -->
+    <file src="AnyCPU\Release\MediaCaptureExtensions.XML" target="lib\portable-win81+wpa81\" />    
+  </files>
+</package>

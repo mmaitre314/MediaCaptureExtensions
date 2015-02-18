@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="clean.cmd" />
+    <None Include="MMaitre.MediaCaptureExtensions.nuspec" />
+    <None Include="MMaitre.MediaCaptureExtensions.Symbols.nuspec" />
+    <None Include="pack.cmd" />
+    <None Include="publish.cmd" />
+    <None Include="pack.sln" />
+  </ItemGroup>
+</Project>
