@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTestApp.WindowsPhone
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Package", "Package\Package.vcxproj", "{648D0C9A-D719-456C-BC06-9A4A81EEF7A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.NuGet.Windows", "UnitTests.NuGet.Windows\UnitTests.NuGet.Windows.csproj", "{6881CA4A-9694-45FD-B52B-F5B12487913D}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CaptureTestApp\CaptureTestApp.Shared\CaptureTestApp.Shared.projitems*{eadb78ca-6dc2-44c1-bad1-0a8f5eaa3929}*SharedItemsImports = 4
@@ -133,7 +135,24 @@ Global
 		{648D0C9A-D719-456C-BC06-9A4A81EEF7A5}.Release|ARM.ActiveCfg = Release|Win32
 		{648D0C9A-D719-456C-BC06-9A4A81EEF7A5}.Release|x64.ActiveCfg = Release|Win32
 		{648D0C9A-D719-456C-BC06-9A4A81EEF7A5}.Release|x86.ActiveCfg = Release|Win32
-		{648D0C9A-D719-456C-BC06-9A4A81EEF7A5}.Release|x86.Build.0 = Release|Win32
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|ARM.Build.0 = Debug|ARM
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|ARM.Deploy.0 = Debug|ARM
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|x64.ActiveCfg = Debug|x64
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|x64.Build.0 = Debug|x64
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|x64.Deploy.0 = Debug|x64
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|x86.ActiveCfg = Debug|x86
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|x86.Build.0 = Debug|x86
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Debug|x86.Deploy.0 = Debug|x86
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|ARM.ActiveCfg = Release|ARM
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|ARM.Build.0 = Release|ARM
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|ARM.Deploy.0 = Release|ARM
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|x64.ActiveCfg = Release|x64
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|x64.Build.0 = Release|x64
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|x64.Deploy.0 = Release|x64
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|x86.ActiveCfg = Release|x86
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|x86.Build.0 = Release|x86
+		{6881CA4A-9694-45FD-B52B-F5B12487913D}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

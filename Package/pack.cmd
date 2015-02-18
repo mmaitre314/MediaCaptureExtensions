@@ -20,6 +20,4 @@ REM Build
 
 REM Pack
 %OUTPUT%nuget.exe pack MMaitre.MediaCaptureExtensions.nuspec -OutputDirectory %OUTPUT%Packages -Prop NuGetVersion=%VERSION% 
-:: -NoPackageAnalysis
 %OUTPUT%nuget.exe pack MMaitre.MediaCaptureExtensions.Symbols.nuspec -OutputDirectory %OUTPUT%Symbols -Prop NuGetVersion=%VERSION%
-:: -NoPackageAnalysis
