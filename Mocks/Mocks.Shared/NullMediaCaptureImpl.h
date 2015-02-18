@@ -8,6 +8,7 @@ class NullMediaCaptureImpl WrlSealed :
     public Microsoft::WRL::RuntimeClass <
     MW::RuntimeClassFlags<MW::RuntimeClassType::WinRtClassicComMix>,
     AWMC::IMediaCapture,
+    AWMC::IMediaCapture2,
     AWMC::IMediaCaptureVideoPreview,
     MW::CloakedIid<IAdvancedMediaCapture>,
     MW::CloakedIid<IAdvancedMediaCaptureSettings>
@@ -189,6 +190,63 @@ public:
     {
         return OriginateError(E_NOTIMPL);
     }
+
+    //
+    // IMediaCapture
+    //
+
+    STDMETHOD(PrepareLowLagRecordToStorageFileAsync)(
+        _In_ AWMMp::IMediaEncodingProfile *encodingProfile,
+        _In_ AWS::IStorageFile *file,
+        _COM_Outptr_ __FIAsyncOperation_1_Windows__CMedia__CCapture__CLowLagMediaRecording **operation) override
+    {
+        return OriginateError(E_NOTIMPL);
+    }
+
+    STDMETHOD(PrepareLowLagRecordToStreamAsync)(
+        _In_ AWMMp::IMediaEncodingProfile *encodingProfile,
+        _In_ AWSS::IRandomAccessStream *stream,
+        _COM_Outptr_ __FIAsyncOperation_1_Windows__CMedia__CCapture__CLowLagMediaRecording **operation) override
+    {
+        return OriginateError(E_NOTIMPL);
+    }
+
+    STDMETHOD(PrepareLowLagRecordToCustomSinkAsync)(
+        _In_ AWMMp::IMediaEncodingProfile *encodingProfile,
+        _In_ AWM::IMediaExtension *customMediaSink,
+        _COM_Outptr_ __FIAsyncOperation_1_Windows__CMedia__CCapture__CLowLagMediaRecording **operation) override
+    {
+        return OriginateError(E_NOTIMPL);
+    }
+
+    STDMETHOD(PrepareLowLagRecordToCustomSinkIdAsync)(
+        _In_ AWMMp::IMediaEncodingProfile *encodingProfile,
+        _In_ HSTRING customSinkActivationId,
+        _In_ ABI::Windows::Foundation::Collections::IPropertySet *customSinkSettings,
+        _COM_Outptr_ __FIAsyncOperation_1_Windows__CMedia__CCapture__CLowLagMediaRecording **operation) override
+    {
+        return OriginateError(E_NOTIMPL);
+    }
+
+    STDMETHOD(PrepareLowLagPhotoCaptureAsync)(
+        _In_ AWMMp::IImageEncodingProperties *type,
+        _COM_Outptr_ __FIAsyncOperation_1_Windows__CMedia__CCapture__CLowLagPhotoCapture **operation) override
+    {
+        return OriginateError(E_NOTIMPL);
+    }
+
+    STDMETHOD(PrepareLowLagPhotoSequenceCaptureAsync)(
+        _In_ AWMMp::IImageEncodingProperties *type,
+        _COM_Outptr_ __FIAsyncOperation_1_Windows__CMedia__CCapture__CLowLagPhotoSequenceCapture **operation) override
+    {
+        return OriginateError(E_NOTIMPL);
+    }
+
+    STDMETHOD(SetEncodingPropertiesAsync)(
+        _In_ AWMC::MediaStreamType mediaStreamType,
+        _In_ AWMMp::IMediaEncodingProperties *mediaEncodingProperties,
+        _In_opt_ __FIMap_2_GUID_IInspectable *encoderProperties,
+        _COM_Outptr_ ABI::Windows::Foundation::IAsyncAction **operation) override;
 
     //
     // IMediaCaptureVideoPreview

@@ -89,10 +89,7 @@ public:
     STDMETHOD(GetAvailableMediaStreamProperties)(
         _In_ AWMC::MediaStreamType mediaStreamType,
         _COM_Outptr_ AWFC::IVectorView<AWMMp::IMediaEncodingProperties*> **value
-        ) override
-    {
-        return OriginateError(E_NOTIMPL);
-    }
+        ) override;
 
     STDMETHOD(GetMediaStreamProperties)(_In_ AWMC::MediaStreamType mediaStreamType, _COM_Outptr_ AWMMp::IMediaEncodingProperties **value) override;
 
@@ -100,13 +97,14 @@ public:
         _In_ AWMC::MediaStreamType mediaStreamType,
         _In_ AWMMp::IMediaEncodingProperties *mediaEncodingProperties,
         _COM_Outptr_ AWF::IAsyncAction **asyncInfo
-        ) override
-    {
-        return OriginateError(E_NOTIMPL);
-    }
+        ) override;
 
 private:
 
     virtual ~NullVideoDeviceController();
+    
+    WMMp::IMediaEncodingProperties^ _videoRecordProperties;
+    WMMp::IMediaEncodingProperties^ _videoPreviewProperties;
+    WMMp::IMediaEncodingProperties^ _audioRecordProperties;
 };
 

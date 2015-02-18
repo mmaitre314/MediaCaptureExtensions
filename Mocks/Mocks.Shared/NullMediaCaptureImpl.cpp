@@ -210,8 +210,7 @@ STDMETHODIMP NullMediaCaptureImpl::StartPreviewToCustomSinkAsync(
             return task_from_result();
         });
 
-        *asyncInfo = reinterpret_cast<IAsyncAction*>(action);
-        (*asyncInfo)->AddRef();
+        *asyncInfo = As<IAsyncAction>(action).Detach();
     });
 }
 
@@ -235,8 +234,29 @@ STDMETHODIMP NullMediaCaptureImpl::StopPreviewAsync(_COM_Outptr_ IAsyncAction **
             return task_from_result();
         });
 
-        *asyncInfo = reinterpret_cast<IAsyncAction*>(action);
-        (*asyncInfo)->AddRef();
+        *asyncInfo = As<IAsyncAction>(action).Detach();
+    });
+}
+
+STDMETHODIMP NullMediaCaptureImpl::SetEncodingPropertiesAsync(
+    _In_ AWMC::MediaStreamType mediaStreamType,
+    _In_ AWMMp::IMediaEncodingProperties *mediaEncodingProperties,
+    _In_opt_ __FIMap_2_GUID_IInspectable *encoderProperties,
+    _COM_Outptr_ ABI::Windows::Foundation::IAsyncAction **operation)
+{
+    *operation = nullptr;
+
+    return ExceptionBoundary([=]()
+    {
+        auto lock = _lock.LockExclusive();
+        CHKNULL(mediaEncodingProperties);
+
+        Windows::Foundation::IAsyncAction^ action = create_async([]()
+        {
+            return task_from_result();
+        });
+
+        *operation = As<IAsyncAction>(action).Detach();
     });
 }
 

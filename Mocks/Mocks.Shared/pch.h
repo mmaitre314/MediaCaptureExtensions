@@ -150,6 +150,7 @@ namespace AWM = ::ABI::Windows::Media;
 namespace AWMC = ::ABI::Windows::Media::Capture;
 namespace AWMD = ::ABI::Windows::Media::Devices;
 namespace AWMMp = ::ABI::Windows::Media::MediaProperties;
+namespace AWS = ::ABI::Windows::Storage;
 namespace AWSS = ::ABI::Windows::Storage::Streams;
 namespace MW = ::Microsoft::WRL;
 namespace MWD = ::Microsoft::WRL::Details;
