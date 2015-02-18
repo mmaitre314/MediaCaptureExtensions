@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mediacaptureextensions by mmaitre314</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/mmaitre314/MediaCaptureExtensions">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/mmaitre314/MediaCaptureExtensions/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/mmaitre314/MediaCaptureExtensions/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Mediacaptureextensions</h1>
+          <p>Potpourri of methods managing MediaCapture</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/mmaitre314">mmaitre314</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <p><a href="https://ci.appveyor.com/project/mmaitre314/mediacaptureextensions"><img src="https://ci.appveyor.com/api/projects/status/6ino9fddjh9qxd8h?svg=true" alt="Build status"></a> <a href="https://www.nuget.org/packages/MMaitre.MediaCaptureExtensions/"><img src="http://mmaitre314.github.io/images/nuget.png" alt="NuGet package"></a></p>
+
+<p>To enable the helper methods below add this <a href="https://www.nuget.org/packages/MMaitre.MediaCaptureExtensions/">NuGet package</a> to your C# project and <code>using MediaCaptureExtensions;</code> to .cs files.</p>
+
+<h2>
+<a id="select-back-or-front-camera" class="anchor" href="#select-back-or-front-camera" aria-hidden="true"><span class="octicon octicon-link"></span></a>Select back or front camera</h2>
+
+<div class="highlight highlight-c#"><pre><span class="pl-k">var</span> settings = <span class="pl-s">new</span> MediaCaptureInitializationSettings();
+<span class="pl-k">await</span> settings.SelectVideoDeviceAsync(VideoDeviceSelection.BackOrFirst);
+
+<span class="pl-k">var</span> capture = <span class="pl-s">new</span> MediaCapture();
+<span class="pl-k">await</span> capture.InitializeAsync(settings);</pre></div>
+
+<h2>
+<a id="rotate-preview-without-extra-black-bars" class="anchor" href="#rotate-preview-without-extra-black-bars" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rotate preview without extra black bars</h2>
+
+<pre lang="c3"><code>var capture = new MediaCapture();
+await capture.InitializeAsync();
+
+await capture.SetPreviewRotationAsync(VideoRotation.Clockwise90Degrees);
+</code></pre>
+
+<h2>
+<a id="direct-access-to-bytes-in-ibuffer" class="anchor" href="#direct-access-to-bytes-in-ibuffer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Direct access to bytes in IBuffer</h2>
+
+<p>This extension requires "unsafe" code to be enabled.</p>
+
+<div class="highlight highlight-c#"><pre><span class="pl-k">var</span> buffer = <span class="pl-s">new</span> Buffer(<span class="pl-c1">100</span>);
+<span class="pl-st">byte</span>* data = buffer.GetData();
+<span class="pl-k">for</span> (<span class="pl-st">int</span> i = <span class="pl-c1">0</span>; i &lt; buffer.Capacity; i++)
+{
+    data[i] = <span class="pl-c1">42</span>;
+}
+buffer.Length = buffer.Capacity;</pre></div>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
