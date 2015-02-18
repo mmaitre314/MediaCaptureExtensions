@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/6ino9fddjh9qxd8h?svg=true)](https://ci.appveyor.com/project/mmaitre314/mediacaptureextensions) [![NuGet package](http://mmaitre314.github.io/images/nuget.png)](https://www.nuget.org/packages/MMaitre.MediaCaptureExtensions/)
+
 To enable the helper methods below add this [NuGet package](https://www.nuget.org/packages/MMaitre.MediaCaptureExtensions/) to your C# project and `using MediaCaptureExtensions;` to .cs files.
 
 ## Select back or front camera
